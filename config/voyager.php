@@ -14,7 +14,7 @@ return [
         'add_default_role_on_register' => true,
         'default_role'                 => 'user',
         'namespace'                    => null,
-        'default_avatar'               => 'https://oprsawit.s3-ap-southeast-1.amazonaws.com/assets/com.gswstudio.tandanbuahsegarsawit.png',
+        'default_avatar'               => 'https://oprsawit.s3-ap-southeast-1.amazonaws.com/assets/avatar.png',
         'redirect'                     => '/',
     ],
 
