@@ -18,4 +18,6 @@
 
 Route::group(['prefix' => '/'], function () {
     Voyager::routes();
+
+    Route::post('login', ['uses' => 'MyAuthController@postLogin', 'as' => 'postlogin']);
 });
