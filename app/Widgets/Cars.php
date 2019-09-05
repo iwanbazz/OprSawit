@@ -3,8 +3,6 @@
 namespace App\Widgets;
 
 use App\Car;
-use Illuminate\Support\Str;
-use TCG\Voyager\Facades\Voyager;
 use Arrilot\Widgets\AbstractWidget;
 
 class Cars extends AbstractWidget
@@ -28,9 +26,9 @@ class Cars extends AbstractWidget
         return view('voyager::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-news',
             'title'  => "{$count} {$string}",
-            'text'   => __('voyager::dimmer.post_text', ['count' => $count, 'string' => Str::lower($string)]),
+            'text'   => "Kamu mempunyai {$count} mobil dalam database. Klik tombol dibawah untuk melihat semua mobil",
             'button' => [
-                'text' => __('voyager::dimmer.post_link_text'),
+                'text' => 'Lihat semua mobil',
                 'link' => route('voyager.cars.index'),
             ],
             'image' => '/mobil-bg.jpg',
