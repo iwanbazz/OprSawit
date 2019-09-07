@@ -66,7 +66,7 @@
 
             <div class="login-container">
 
-                <p>Silahkan masuk:</p>
+                <p style="text-transform:capitalize">Silahkan masuk :</p>
 
                 <form action="{{ route('voyager.login') }}" method="POST">
                     {{ csrf_field() }}
