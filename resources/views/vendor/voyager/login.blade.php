@@ -66,33 +66,33 @@
 
             <div class="login-container">
 
-                <p>{{ __('voyager::login.signin_below') }}</p>
+                <p>Silahkan masuk:</p>
 
                 <form action="{{ route('voyager.login') }}" method="POST">
                     {{ csrf_field() }}
                     <div class="form-group form-group-default" id="nameGroup">
-                        <label>{{ __('voyager::generic.name') }}</label>
+                        <label>Nama</label>
                         <div class="controls">
-                            <input type="text" name="name" id="name" value="{{ old('name') }}" placeholder="{{ __('voyager::generic.name') }}" class="form-control" required>
+                            <input type="text" name="name" id="name" value="{{ old('name') }}" placeholder="Masukkan nama pengguna" class="form-control" required>
                          </div>
                     </div>
 
                     <div class="form-group form-group-default" id="passwordGroup">
-                        <label>{{ __('voyager::generic.password') }}</label>
+                        <label>Kata sandi</label>
                         <div class="controls">
-                            <input type="password" name="password" placeholder="{{ __('voyager::generic.password') }}" class="form-control" required>
+                            <input type="password" name="password" placeholder="Masukkan kata sandi" class="form-control" required>
                         </div>
                     </div>
 
                     <div class="form-group" id="rememberMeGroup">
                         <div class="controls">
-                        <input type="checkbox" name="remember" value="1"><span class="remember-me-text">{{ __('voyager::generic.remember_me') }}</span>
+                        <input type="checkbox" name="remember" value="1"><span class="remember-me-text">Ingat saya</span>
                         </div>
                     </div>
 
                     <button type="submit" class="btn btn-block login-button">
-                        <span class="signingin hidden"><span class="voyager-refresh"></span> {{ __('voyager::login.loggingin') }}...</span>
-                        <span class="signin">{{ __('voyager::generic.login') }}</span>
+                        <span class="signingin hidden"><span class="voyager-refresh"></span> Sedang masuk...</span>
+                        <span class="signin">Masuk</span>
                     </button>
 
               </form>
