@@ -31,7 +31,7 @@ class Cars extends AbstractWidget
                 'text' => 'Lihat semua mobil',
                 'link' => route('voyager.cars.index'),
             ],
-            'image' => '/mobil-bg.jpg',
+            'image' => '/assets/mobil-bg.jpg',
         ]));
     }
 
