@@ -24,7 +24,7 @@ class Cars extends AbstractWidget
         $string = 'Mobil';
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-news',
+            'icon'   => 'voyager-truck',
             'title'  => "{$count} {$string}",
             'text'   => "Kamu mempunyai {$count} mobil dalam database. Klik tombol dibawah untuk melihat semua mobil",
             'button' => [
