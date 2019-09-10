@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1502db603989766f5dae8eb303e65265",
+    "content-hash": "f347da696daf0af1f6085bbca18cd837",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -1005,6 +1005,46 @@
             "time": "2019-03-17T18:48:37+00:00"
         },
         {
+            "name": "extended-bread-form-fields",
+            "version": "v0.2-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bnku/extended-bread-form-fields.git",
+                "reference": "v0.2-beta"
+            },
+            "require": {
+                "larapack/hooks": "^1.0.5"
+            },
+            "type": "library",
+            "extra": {
+                "hook": {
+                    "providers": [
+                        "ExtendedBreadFormFields\\ExtendedBreadFormFieldsServiceProvider"
+                    ],
+                    "views": [
+                        "resources/vievs"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ExtendedBreadFormFields\\": "src/"
+                }
+            },
+            "notification-url": "https://larapack.io/downloads",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "bnku",
+                    "email": "bnku@ya.ru"
+                }
+            ],
+            "description": "Extended FormFields hook interface to Voyager BREAD",
+            "time": "2019-09-09T09:09:52+00:00"
+        },
+        {
             "name": "fideloper/proxy",
             "version": "4.2.0",
             "source": {
@@ -1057,6 +1097,58 @@
                 "trusted proxy"
             ],
             "time": "2019-07-29T16:49:45+00:00"
+        },
+        {
+            "name": "generate-migrations-hook",
+            "version": "v0.1.3beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mohammed-io/generate-migrations-hook.git",
+                "reference": "v0.1.3beta"
+            },
+            "require": {
+                "larapack/hooks": "~1.0",
+                "laravel/framework": "^5.5",
+                "php": "^7.0.0",
+                "tcg/voyager": "^1.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.2",
+                "phpunit/phpunit": "^8.1"
+            },
+            "type": "library",
+            "extra": {
+                "hook": {
+                    "providers": [
+                        "MohammedIO\\GenerateMigrationsHookServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MohammedIO\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "MohammedIO\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://larapack.io/downloads",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohammed A.",
+                    "email": "mohammed-io@outlook.com",
+                    "homepage": "https://mohammed-io.github.io/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This hook is to generate voyager-only migration for laravel app",
+            "homepage": "https://github.com/mohammed-io/generate-migrations-hook",
+            "time": "2019-09-07T09:09:57+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1404,6 +1496,44 @@
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
+            "name": "json-mini-bread",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/strappberry/json-mini-bread.git",
+                "reference": "master"
+            },
+            "require": {
+                "larapack/hooks": "^1.0.5",
+                "tcg/voyager": "^1.1.11"
+            },
+            "type": "library",
+            "extra": {
+                "hook": {
+                    "providers": [
+                        "JsonMiniBreadHook\\JsonMiniBreadHookServiceProvider"
+                    ],
+                    "aliases": {
+                        "JsonMiniBreadHook": "JsonMiniBreadHook\\Facades\\JsonMiniBreadHookFacade"
+                    },
+                    "views": [
+                        "resources/views"
+                    ],
+                    "lang": [
+                        "resources/lang"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JsonMiniBreadHook\\": "src/"
+                }
+            },
+            "notification-url": "https://larapack.io/downloads",
+            "description": "Creates a mini BREAD nested inside another model.",
+            "time": "2019-08-23T22:40:15+00:00"
+        },
+        {
             "name": "justinrainbow/json-schema",
             "version": "5.2.8",
             "source": {
@@ -1468,6 +1598,46 @@
                 "schema"
             ],
             "time": "2019-01-14T23:55:14+00:00"
+        },
+        {
+            "name": "key-value-json",
+            "version": "v0.1-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bnku/key-value-json.git",
+                "reference": "v0.1-beta"
+            },
+            "require": {
+                "larapack/hooks": "^1.0.5"
+            },
+            "type": "library",
+            "extra": {
+                "hook": {
+                    "providers": [
+                        "KeyValueJson\\KeyValueJsonServiceProvider"
+                    ],
+                    "views": [
+                        "resources/views"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "KeyValueJson\\": "src/"
+                }
+            },
+            "notification-url": "https://larapack.io/downloads",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "bnku",
+                    "email": "bnku@ya.ru"
+                }
+            ],
+            "description": "Form Field \"Key-Value to JSON\" to Voyager BREAD.",
+            "time": "2019-09-07T12:09:16+00:00"
         },
         {
             "name": "larapack/doctrine-support",
@@ -4432,6 +4602,62 @@
                 "environment"
             ],
             "time": "2019-08-27T17:00:38+00:00"
+        },
+        {
+            "name": "voyager-redirects",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/the-control-group/voyager-redirects.git",
+                "reference": "v1.0.0"
+            },
+            "require": {
+                "larapack/hooks": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "hook": {
+                    "providers": [
+                        "VoyagerRedirects\\VoyagerRedirectServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "VoyagerRedirects\\": "src/"
+                }
+            },
+            "notification-url": "https://larapack.io/downloads",
+            "description": "A hook to add redirects to your Voyager sites",
+            "time": "2019-09-08T12:09:11+00:00"
+        },
+        {
+            "name": "voyager-themes",
+            "version": "0.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thedevdojo/voyager-themes.git",
+                "reference": "0.15"
+            },
+            "require": {
+                "larapack/hooks": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "hook": {
+                    "providers": [
+                        "VoyagerThemes\\VoyagerThemesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "VoyagerThemes\\": "src/"
+                }
+            },
+            "notification-url": "https://larapack.io/downloads",
+            "description": "This hook will add support for Voyager front-end themes",
+            "time": "2019-09-09T16:09:03+00:00"
         }
     ],
     "packages-dev": [
@@ -6200,7 +6426,12 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "extended-bread-form-fields": 10,
+        "generate-migrations-hook": 10,
+        "json-mini-bread": 20,
+        "key-value-json": 10
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

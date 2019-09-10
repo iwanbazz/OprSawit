@@ -1,1 +1,41 @@
-{}
+{
+    "last_remote_check": 1568021677,
+    "hooks": {
+        "generate-migrations-hook": {
+            "name": "generate-migrations-hook",
+            "description": "This hook is to generate voyager-only migration for laravel app",
+            "version": "v0.1.3beta",
+            "enabled": true
+        },
+        "voyager-redirects": {
+            "name": "voyager-redirects",
+            "description": "A hook to add redirects to your Voyager sites",
+            "version": "v1.0.0",
+            "enabled": true
+        },
+        "json-mini-bread": {
+            "name": "json-mini-bread",
+            "description": "Creates a mini BREAD nested inside another model.",
+            "version": "dev-master",
+            "enabled": true
+        },
+        "voyager-themes": {
+            "name": "voyager-themes",
+            "description": "This hook will add support for Voyager front-end themes",
+            "version": "0.15",
+            "enabled": true
+        },
+        "extended-bread-form-fields": {
+            "name": "extended-bread-form-fields",
+            "description": "Extended FormFields hook interface to Voyager BREAD",
+            "version": "v0.2-beta",
+            "enabled": true
+        },
+        "key-value-json": {
+            "name": "key-value-json",
+            "description": "Form Field \"Key-Value to JSON\" to Voyager BREAD.",
+            "version": "v0.1-beta",
+            "enabled": true
+        }
+    }
+}
