@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Larapack\Hooks\HooksServiceProvider::class,
+        Larapack\VoyagerHooks\VoyagerHooksServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -17,6 +17,7 @@
         "json-mini-bread": "dev-master",
         "key-value-json": "^0.1.0@beta",
         "larapack/hooks": "^1.0",
+        "larapack/voyager-hooks": "^1.2",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
