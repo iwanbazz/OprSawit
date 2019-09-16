@@ -19,12 +19,6 @@
             "version": "dev-master",
             "enabled": true
         },
-        "voyager-themes": {
-            "name": "voyager-themes",
-            "description": "This hook will add support for Voyager front-end themes",
-            "version": "0.15",
-            "enabled": true
-        },
         "extended-bread-form-fields": {
             "name": "extended-bread-form-fields",
             "description": "Extended FormFields hook interface to Voyager BREAD",
