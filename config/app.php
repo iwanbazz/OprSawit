@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Larapack\Hooks\HooksServiceProvider::class,
 
         /*
          * Application Service Providers...
