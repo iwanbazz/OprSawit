@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba1128a289457931199fa32f1a7baee4",
+    "content-hash": "bed83237efd381de50cfb374faf37a1c",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -1127,46 +1127,6 @@
             "time": "2019-03-17T18:48:37+00:00"
         },
         {
-            "name": "extended-bread-form-fields",
-            "version": "v0.2-beta",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bnku/extended-bread-form-fields.git",
-                "reference": "v0.2-beta"
-            },
-            "require": {
-                "larapack/hooks": "^1.0.5"
-            },
-            "type": "library",
-            "extra": {
-                "hook": {
-                    "providers": [
-                        "ExtendedBreadFormFields\\ExtendedBreadFormFieldsServiceProvider"
-                    ],
-                    "views": [
-                        "resources/vievs"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "ExtendedBreadFormFields\\": "src/"
-                }
-            },
-            "notification-url": "https://larapack.io/downloads",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "bnku",
-                    "email": "bnku@ya.ru"
-                }
-            ],
-            "description": "Extended FormFields hook interface to Voyager BREAD",
-            "time": "2019-09-09T09:09:52+00:00"
-        },
-        {
             "name": "fideloper/proxy",
             "version": "4.2.1",
             "source": {
@@ -2251,6 +2211,52 @@
             ],
             "description": "Flysystem adapter for the AWS S3 SDK v3.x",
             "time": "2019-06-05T17:18:29+00:00"
+        },
+        {
+            "name": "marfdiogo78/extended-bread-form-fields",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marfdiogo78/extended_bread_form_fields_new.git",
+                "reference": "49485aefb242b15ddf27c37181d0846663d6085c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marfdiogo78/extended_bread_form_fields_new/zipball/49485aefb242b15ddf27c37181d0846663d6085c",
+                "reference": "49485aefb242b15ddf27c37181d0846663d6085c",
+                "shasum": ""
+            },
+            "require": {
+                "larapack/hooks": "^1.0.5"
+            },
+            "type": "library",
+            "extra": {
+                "hook": {
+                    "providers": [
+                        "ExtendedBreadFormFields\\ExtendedBreadFormFieldsServiceProvider"
+                    ],
+                    "views": [
+                        "resources/vievs"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ExtendedBreadFormFields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "bnku",
+                    "email": "bnku@ya.ru"
+                }
+            ],
+            "description": "Extended FormFields hook interface to Voyager BREAD",
+            "time": "2019-08-23T18:16:34+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -6649,10 +6655,10 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "extended-bread-form-fields": 10,
         "generate-migrations-hook": 10,
         "json-mini-bread": 20,
-        "key-value-json": 10
+        "key-value-json": 10,
+        "marfdiogo78/extended-bread-form-fields": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

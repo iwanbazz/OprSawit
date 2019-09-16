@@ -1,5 +1,5 @@
 {
-    "last_remote_check": 1568021677,
+    "last_remote_check": 1568650243,
     "hooks": {
         "generate-migrations-hook": {
             "name": "generate-migrations-hook",
@@ -17,12 +17,6 @@
             "name": "json-mini-bread",
             "description": "Creates a mini BREAD nested inside another model.",
             "version": "dev-master",
-            "enabled": true
-        },
-        "extended-bread-form-fields": {
-            "name": "extended-bread-form-fields",
-            "description": "Extended FormFields hook interface to Voyager BREAD",
-            "version": "v0.2-beta",
             "enabled": true
         },
         "key-value-json": {
