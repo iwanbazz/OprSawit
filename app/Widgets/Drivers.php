@@ -29,7 +29,7 @@ class Drivers extends AbstractWidget
             'text'   => "Kamu mempunyai {$count} supir dalam database. Klik tombol dibawah untuk melihat semua supir",
             'button' => [
                 'text' => 'Lihat semua supir',
-                'link' => route('voyager.cars.index'),
+                'link' => route('voyager.drivers.index'),
             ],
             'image' => '/assets/palmCar.jpg',
         ]));
