@@ -23,6 +23,7 @@
         "laravel/tinker": "^1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "marfdiogo78/extended-bread-form-fields": "dev-master",
+        "sentry/sentry-laravel": "1.2.1",
         "tcg/voyager": "^1.2",
         "voyager-redirects": "^1.0"
     },

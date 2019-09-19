@@ -21,3 +21,7 @@ Route::group(['prefix' => '/'], function () {
 
     Route::post('login', ['uses' => 'MyAuthController@postLogin', 'as' => 'postlogin']);
 });
+
+Route::get('/debug-sentry', function () {
+    throw new Exception('My first Sentry error!');
+});
