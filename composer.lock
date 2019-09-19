@@ -70,16 +70,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.112.1",
+            "version": "3.112.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "e2fc12e34732f61000f2592fc66807794d32fb7b"
+                "reference": "c27c64904dcf3f3131a927b09b0036273a22a0ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e2fc12e34732f61000f2592fc66807794d32fb7b",
-                "reference": "e2fc12e34732f61000f2592fc66807794d32fb7b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c27c64904dcf3f3131a927b09b0036273a22a0ae",
+                "reference": "c27c64904dcf3f3131a927b09b0036273a22a0ae",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +149,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-09-16T18:09:39+00:00"
+            "time": "2019-09-18T18:09:31+00:00"
         },
         {
             "name": "barryvdh/laravel-dompdf",
@@ -1182,16 +1182,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "1.6.6",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "8fe0ab9850e92aa5e4492c44145b28bc5b83051a"
+                "reference": "c4aae328c58b5a6e6ff731050db56901c02451c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/8fe0ab9850e92aa5e4492c44145b28bc5b83051a",
-                "reference": "8fe0ab9850e92aa5e4492c44145b28bc5b83051a",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/c4aae328c58b5a6e6ff731050db56901c02451c0",
+                "reference": "c4aae328c58b5a6e6ff731050db56901c02451c0",
                 "shasum": ""
             },
             "require": {
@@ -1246,7 +1246,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2019-09-16T19:55:14+00:00"
+            "time": "2019-09-18T19:06:14+00:00"
         },
         {
             "name": "facade/ignition-contracts",
