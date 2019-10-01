@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
-class OprController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
+class OprController extends VoyagerBaseController
 {
   //
 }
