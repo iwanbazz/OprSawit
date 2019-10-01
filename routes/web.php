@@ -17,11 +17,12 @@
 
 
 Route::group(['prefix' => '/'], function () {
-    Voyager::routes();
+  Voyager::routes();
 
-    Route::post('login', ['uses' => 'MyAuthController@postLogin', 'as' => 'postlogin']);
+  // Change login from email to username
+  Route::post('login', ['uses' => 'MyAuthController@postLogin', 'as' => 'postlogin']);
 });
 
 Route::get('/debug-sentry', function () {
-    throw new Exception('My first Sentry error!');
+  throw new Exception('My first Sentry error!');
 });
