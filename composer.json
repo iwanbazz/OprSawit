@@ -1,10 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "iwanbazz/OprSawit",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "PalmOil Operation Management",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "palmoil"
     ],
     "license": "MIT",
     "require": {
