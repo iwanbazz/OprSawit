@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 13, 2019 at 07:29 PM
+-- Generation Time: Oct 03, 2019 at 08:38 AM
 -- Server version: 5.7.27
--- PHP Version: 7.3.9
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,7 +44,7 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`id`, `carname`, `cartype`, `carplate`, `created_at`, `updated_at`, `deleted_at`, `carimage`) VALUES
-(2, 'Mitsubishi', 'option1', 'BM 1234 CE', '2019-09-04 23:47:50', '2019-09-09 18:13:40', NULL, NULL),
+(2, 'Mitsubishi', 'option1', 'BM 1234 CE', '2019-09-04 23:47:50', '2019-10-03 07:53:33', NULL, 0x5b22636172735c5c4f63746f626572323031395c5c3247776352376b5a3848697047763875377175702e6a7067225d),
 (12, 'Hino FL 235 JW', 'option2', 'BM 2134 JE', '2019-09-05 03:03:19', '2019-09-05 03:03:19', NULL, 0x5b22636172735c5c53657074656d626572323031395c5c4743337743503452784244384968576a434653372e6a7067225d);
 
 -- --------------------------------------------------------
@@ -154,20 +154,14 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (532, 52, 'updated_at', 'timestamp', 'Updated At', 1, 0, 0, 0, 0, 0, NULL, 11),
 (542, 52, 'image', 'image', 'Page Image', 0, 1, 1, 1, 1, 1, NULL, 12),
 (622, 102, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(632, 102, 'carname', 'text', 'Nama Mobil', 0, 1, 1, 1, 1, 1, '{}', 2),
-(642, 102, 'cartype', 'select_dropdown', 'Jenis Mobil', 0, 1, 1, 1, 1, 1, '{\"default\":\"option1\",\"options\":{\"option1\":\"Dump Truck\",\"option2\":\"Tronton\",\"option3\":\"trinton\"}}', 3),
-(652, 102, 'carplate', 'text', 'Nomor Polisi', 0, 1, 1, 1, 1, 1, '{}', 4),
+(632, 102, 'carname', 'text', 'Nama Mobil', 0, 1, 1, 1, 1, 1, '{\"description\":\"Masukkan nama\\/merk mobil\",\"validation\":{\"rule\":\"required\"}}', 2),
+(642, 102, 'cartype', 'select_dropdown', 'Jenis Mobil', 0, 1, 1, 1, 1, 1, '{\"default\":\"option1\",\"options\":{\"option1\":\"Dump Truck\",\"option2\":\"Tronton\",\"option3\":\"Trinton\"},\"description\":\"Pilih jenis mobil\",\"display\":{\"width\":\"6\"}}', 3),
+(652, 102, 'carplate', 'text', 'Nomor Polisi', 0, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|max:11\"},\"description\":\"Masukkan nomor polisi\",\"display\":{\"width\":\"6\"}}', 4),
 (662, 102, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, '{}', 5),
 (672, 102, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
 (682, 102, 'deleted_at', 'timestamp', 'Deleted At', 0, 0, 0, 0, 0, 0, '{}', 7),
 (692, 112, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(702, 112, 'drivername', 'text', 'Nama Supir', 0, 1, 1, 1, 1, 1, '{}', 2),
-(712, 112, 'driverpay', 'text', 'Gaji Supir', 0, 1, 1, 1, 1, 1, '{}', 3),
-(722, 112, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, '{}', 4),
-(732, 112, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 5),
-(742, 112, 'deleted_at', 'timestamp', 'Deleted At', 0, 0, 0, 0, 0, 0, '{}', 6),
-(752, 102, 'carimage', 'multiple_images', 'Photo Mobil', 0, 1, 1, 1, 1, 1, '{}', 8),
-(762, 112, 'driverimage', 'multiple_images', 'Photo Supir', 0, 1, 1, 1, 1, 1, '{}', 7),
+(752, 102, 'carimage', 'multiple_images', 'Photo Mobil', 0, 1, 1, 1, 1, 1, '{\"description\":\"Masukkan gambar mobil\"}', 8),
 (772, 122, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (782, 122, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, '{}', 2),
 (792, 122, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 3),
@@ -195,7 +189,23 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (913, 133, 'unload_weight', 'number', 'Tonase Bongkar', 0, 1, 1, 1, 1, 1, '{}', 11),
 (914, 133, 'decrease', 'number', 'Susut', 0, 1, 1, 1, 1, 1, '{}', 12),
 (915, 133, 'decrease_claim', 'number', 'Klaim Susut', 0, 1, 1, 1, 1, 1, '{}', 13),
-(916, 133, 'basis', 'number', 'Basis', 0, 1, 1, 1, 1, 1, '{}', 14);
+(916, 133, 'basis', 'number', 'Basis', 0, 1, 1, 1, 1, 1, '{}', 14),
+(917, 112, 'driver_name', 'text', 'Nama Driver', 1, 1, 1, 1, 1, 1, '{}', 2),
+(918, 112, 'driver_id', 'number', 'No. KTP', 0, 1, 1, 1, 1, 1, '{}', 3),
+(919, 112, 'driver_phone', 'number', 'No. HP', 1, 1, 1, 1, 1, 1, '{}', 4),
+(920, 112, 'driver_address', 'text', 'Alamat', 0, 1, 1, 1, 1, 1, '{}', 5),
+(921, 112, 'driver_image', 'multiple_images', 'Photo', 0, 1, 1, 1, 1, 1, '{}', 6),
+(922, 112, 'driver_pay', 'number', 'Gaji', 0, 1, 1, 1, 1, 1, '{}', 7),
+(923, 112, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, '{}', 8),
+(924, 112, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 9),
+(925, 112, 'deleted_at', 'timestamp', 'Deleted At', 0, 0, 0, 0, 0, 0, '{}', 10),
+(926, 135, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(927, 135, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, '{}', 2),
+(928, 135, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 3),
+(929, 135, 'deleted_at', 'timestamp', 'Deleted At', 0, 0, 0, 0, 0, 0, '{}', 4),
+(930, 135, 'ware_name', 'text', 'Nama PKS', 0, 1, 1, 1, 1, 1, '{}', 5),
+(931, 135, 'ware_location', 'text', 'Lokasi PKS', 0, 1, 1, 1, 1, 1, '{}', 6),
+(932, 135, 'ware_mile', 'number', 'Jarak Tempuh', 0, 1, 1, 1, 1, 1, '{}', 7);
 
 -- --------------------------------------------------------
 
@@ -232,11 +242,12 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (32, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2019-09-02 19:30:12', '2019-09-02 19:30:12'),
 (42, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2019-09-02 19:30:12', '2019-09-02 19:30:12'),
 (52, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2019-09-02 19:30:13', '2019-09-02 19:30:13'),
-(102, 'cars', 'cars', 'Car', 'Cars', 'voyager-truck', 'App\\Car', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-09-04 01:52:50', '2019-09-09 02:39:04'),
-(112, 'drivers', 'drivers', 'Supir', 'Supir', 'voyager-people', 'App\\Driver', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-09-04 06:17:38', '2019-09-09 18:52:26'),
-(122, 'spares', 'spares', 'Suku Cadang', 'Suku Cadang', NULL, 'App\\Spare', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-09-05 00:10:30', '2019-09-09 18:40:26'),
-(132, 'tires', 'tires', 'Ban', 'Ban', 'voyager-lifebouy', 'App\\Tire', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-09-05 00:52:00', '2019-09-08 23:33:35'),
-(133, 'oprs', 'oprs', 'Surat Jalan', 'Surat Jalan', 'voyager-window-list', 'App\\Opr', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-09-09 18:34:33', '2019-09-09 18:36:04');
+(102, 'cars', 'cars', 'Car', 'Cars', 'voyager-truck', 'App\\Car', NULL, '\\App\\Http\\Controllers\\CarController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-09-04 01:52:50', '2019-10-03 07:53:14'),
+(112, 'drivers', 'drivers', 'Supir', 'Supir', 'voyager-people', 'App\\Driver', NULL, '\\App\\Http\\Controllers\\DriverController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-09-04 06:17:38', '2019-10-01 05:06:54'),
+(122, 'spares', 'spares', 'Suku Cadang', 'Suku Cadang', NULL, 'App\\Spare', NULL, '\\App\\Http\\Controllers\\SpareController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-09-05 00:10:30', '2019-10-01 05:09:45'),
+(132, 'tires', 'tires', 'Ban', 'Ban', 'voyager-lifebouy', 'App\\Tire', NULL, '\\App\\Http\\Controllers\\TireController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-09-05 00:52:00', '2019-10-01 05:12:03'),
+(133, 'oprs', 'oprs', 'Surat Jalan', 'Surat Jalan', 'voyager-window-list', 'App\\Opr', NULL, '\\App\\Http\\Controllers\\OprController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-09-09 18:34:33', '2019-10-01 05:04:39'),
+(135, 'wares', 'wares', 'PKS', 'PKS', 'voyager-company', 'App\\Ware', NULL, '\\App\\Http\\Controllers\\WareController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-10-03 05:42:31', '2019-10-03 08:10:13');
 
 -- --------------------------------------------------------
 
@@ -246,13 +257,23 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 
 CREATE TABLE `drivers` (
   `id` int(10) UNSIGNED NOT NULL,
-  `drivername` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `driverpay` int(11) DEFAULT NULL,
+  `driver_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `driver_id` char(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `driver_phone` char(13) COLLATE utf8_unicode_ci NOT NULL,
+  `driver_address` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `driver_image` blob,
+  `driver_pay` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  `driverimage` blob
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `drivers`
+--
+
+INSERT INTO `drivers` (`id`, `driver_name`, `driver_id`, `driver_phone`, `driver_address`, `driver_image`, `driver_pay`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Iwan', '0123456789021', '081365654390', 'Jalan Beringin - Air hitam', 0x5b22647269766572735c5c4f63746f626572323031395c5c6879344e45635a4c74746435565a4e6d326175732e6a7067225d, NULL, '2019-10-03 04:49:18', '2019-10-03 04:49:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -302,31 +323,32 @@ CREATE TABLE `menu_items` (
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (2, 2, 'Dashboard', '', '_self', 'voyager-boat', NULL, NULL, 1, '2019-09-02 19:30:04', '2019-09-02 19:30:04', 'voyager.dashboard', NULL),
-(12, 2, 'Media', '', '_self', 'voyager-images', NULL, NULL, 4, '2019-09-02 19:30:04', '2019-09-04 02:29:36', 'voyager.media.index', NULL),
-(22, 2, 'Users', '', '_self', 'voyager-person', NULL, NULL, 8, '2019-09-02 19:30:04', '2019-09-04 02:29:42', 'voyager.users.index', NULL),
-(32, 2, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 9, '2019-09-02 19:30:04', '2019-09-04 02:29:44', 'voyager.roles.index', NULL),
-(42, 2, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 10, '2019-09-02 19:30:04', '2019-09-03 21:17:37', NULL, NULL),
+(12, 2, 'Media', '', '_self', 'voyager-images', NULL, NULL, 5, '2019-09-02 19:30:04', '2019-10-03 05:15:43', 'voyager.media.index', NULL),
+(22, 2, 'Users', '', '_self', 'voyager-person', NULL, NULL, 9, '2019-09-02 19:30:04', '2019-10-03 05:15:43', 'voyager.users.index', NULL),
+(32, 2, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 10, '2019-09-02 19:30:04', '2019-10-03 05:15:43', 'voyager.roles.index', NULL),
+(42, 2, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 11, '2019-09-02 19:30:04', '2019-10-03 05:15:43', NULL, NULL),
 (52, 2, 'Menu Builder', '', '_self', 'voyager-list', NULL, 42, 1, '2019-09-02 19:30:04', '2019-09-03 21:11:36', 'voyager.menus.index', NULL),
 (62, 2, 'Database', '', '_self', 'voyager-data', NULL, 42, 2, '2019-09-02 19:30:04', '2019-09-03 21:11:36', 'voyager.database.index', NULL),
 (72, 2, 'Compass', '', '_self', 'voyager-compass', NULL, 42, 3, '2019-09-02 19:30:04', '2019-09-03 21:11:36', 'voyager.compass.index', NULL),
 (82, 2, 'BREAD', '', '_self', 'voyager-bread', NULL, 42, 4, '2019-09-02 19:30:04', '2019-09-03 21:25:35', 'voyager.bread.index', NULL),
-(92, 2, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 11, '2019-09-02 19:30:04', '2019-09-03 21:17:37', 'voyager.settings.index', NULL),
-(102, 2, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 7, '2019-09-02 19:30:12', '2019-09-04 02:29:41', 'voyager.categories.index', NULL),
-(112, 2, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 5, '2019-09-02 19:30:12', '2019-09-04 02:29:37', 'voyager.posts.index', NULL),
-(122, 2, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 6, '2019-09-02 19:30:13', '2019-09-04 02:29:39', 'voyager.pages.index', NULL),
+(92, 2, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 12, '2019-09-02 19:30:04', '2019-10-03 05:15:43', 'voyager.settings.index', NULL),
+(102, 2, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 8, '2019-09-02 19:30:12', '2019-10-03 05:15:43', 'voyager.categories.index', NULL),
+(112, 2, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 6, '2019-09-02 19:30:12', '2019-10-03 05:15:43', 'voyager.posts.index', NULL),
+(122, 2, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 7, '2019-09-02 19:30:13', '2019-10-03 05:15:43', 'voyager.pages.index', NULL),
 (132, 2, 'Hooks', '', '_self', 'voyager-hook', NULL, 42, 5, '2019-09-02 19:30:14', '2019-09-03 21:25:35', 'voyager.hooks', NULL),
 (142, 2, 'Form', '', '_self', 'voyager-window-list', '#000000', NULL, 2, '2019-09-03 21:11:28', '2019-09-03 21:11:38', NULL, ''),
-(152, 2, 'Operasional', '/oprs/create', '_self', 'voyager-documentation', '#000000', 142, 1, '2019-09-03 21:12:38', '2019-09-09 18:37:37', NULL, ''),
+(152, 2, 'Operasional', '', '_self', 'voyager-file-text', '#000000', 142, 1, '2019-09-03 21:12:38', '2019-10-03 05:21:35', 'voyager.oprs.create', 'null'),
 (162, 2, 'Suku Cadang', '/spares/create', '_self', 'voyager-milestone', '#000000', 142, 2, '2019-09-03 21:15:03', '2019-09-09 18:38:57', NULL, ''),
 (172, 2, 'Ban', '/tires/create', '_self', 'voyager-lifebuoy', '#000000', 142, 3, '2019-09-03 21:15:33', '2019-09-09 18:39:13', NULL, ''),
-(182, 2, 'Laporan', '', '_self', 'voyager-archive', '#000000', NULL, 3, '2019-09-03 21:17:21', '2019-09-03 21:17:37', NULL, ''),
-(282, 2, 'Mobil', '', '_self', 'voyager-truck', '#000000', 182, 2, '2019-09-04 01:53:06', '2019-09-04 02:35:56', 'voyager.cars.index', 'null'),
-(292, 2, 'Supir', '', '_self', 'voyager-people', '#000000', 182, 3, '2019-09-04 06:17:52', '2019-09-04 06:42:48', 'voyager.drivers.index', 'null'),
-(302, 2, 'Suku Cadang', '', '_self', 'voyager-milestone', '#000000', 182, 4, '2019-09-05 00:10:45', '2019-09-05 01:57:58', 'voyager.spares.index', 'null'),
-(312, 2, 'Ban', '', '_self', 'voyager-lifebuoy', '#000000', 182, 5, '2019-09-05 00:52:15', '2019-09-05 01:58:30', 'voyager.tires.index', 'null'),
+(182, 2, 'Laporan', '', '_self', 'voyager-archive', '#000000', NULL, 4, '2019-09-03 21:17:21', '2019-10-03 05:15:43', NULL, ''),
+(282, 2, 'Mobil', '', '_self', 'voyager-truck', '#000000', 316, 1, '2019-09-04 01:53:06', '2019-10-03 05:15:43', 'voyager.cars.index', 'null'),
+(292, 2, 'Supir', '', '_self', 'voyager-people', '#000000', 316, 2, '2019-09-04 06:17:52', '2019-10-03 05:15:45', 'voyager.drivers.index', 'null'),
+(302, 2, 'Suku Cadang', '', '_self', 'voyager-milestone', '#000000', 182, 2, '2019-09-05 00:10:45', '2019-10-03 05:15:45', 'voyager.spares.index', 'null'),
+(312, 2, 'Ban', '', '_self', 'voyager-lifebuoy', '#000000', 182, 3, '2019-09-05 00:52:15', '2019-10-03 05:15:45', 'voyager.tires.index', 'null'),
 (313, 2, 'Redirects', '/redirects', '_self', 'voyager-external', NULL, 42, 6, '2019-09-09 11:37:09', '2019-09-09 20:53:48', NULL, NULL),
-(314, 2, 'Themes', '/themes', '_self', 'voyager-paint-bucket', NULL, 42, 7, '2019-09-09 17:46:01', '2019-09-09 20:53:51', NULL, NULL),
-(315, 2, 'Surat Jalan', '', '_self', 'voyager-window-list', NULL, 182, 1, '2019-09-09 18:34:33', '2019-09-09 18:37:23', 'voyager.oprs.index', NULL);
+(315, 2, 'Surat Jalan', '', '_self', 'voyager-window-list', NULL, 182, 1, '2019-09-09 18:34:33', '2019-09-09 18:37:23', 'voyager.oprs.index', NULL),
+(316, 2, 'Data', 'data', '_self', 'voyager-data', '#000000', NULL, 3, '2019-10-03 05:14:32', '2019-10-03 05:16:50', NULL, ''),
+(318, 2, 'PKS', '', '_self', 'voyager-company', NULL, 316, 3, '2019-10-03 05:42:32', '2019-10-03 05:44:24', 'voyager.wares.index', NULL);
 
 -- --------------------------------------------------------
 
@@ -396,7 +418,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (284, '2019_09_09_090307_add_foreign_keys_to_permission_role_table', 0),
 (285, '2019_09_09_090307_add_foreign_keys_to_user_roles_table', 0),
 (286, '2019_09_09_090307_add_foreign_keys_to_users_table', 0),
-(287, '2019_09_10_012750_created_oprs_table_with_voyager0910e07287e8', 1);
+(287, '2019_09_10_012750_created_oprs_table_with_voyager0910e07287e8', 1),
+(288, '2019_09_30_111545_updated_drivers_table_with_voyager09307a47eb90', 2),
+(289, '2019_09_30_112027_updated_drivers_table_with_voyager0930c7188bdf', 3),
+(290, '2019_09_30_114741_updated_drivers_table_with_voyager0930e8e6d44b', 4),
+(291, '2019_09_30_131042_updated_drivers_table_with_voyager0930d6e6765d', 5),
+(292, '2019_10_03_123017_created_ware_table_with_voyager1003257acde9', 6),
+(293, '2019_10_03_124033_updated_wares_table_with_voyager10032b93d1cc', 7);
 
 -- --------------------------------------------------------
 
@@ -420,6 +448,13 @@ CREATE TABLE `oprs` (
   `decrease_claim` int(11) DEFAULT NULL,
   `basis` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `oprs`
+--
+
+INSERT INTO `oprs` (`id`, `created_at`, `updated_at`, `deleted_at`, `contract_id`, `po_number`, `load_date`, `unload_date`, `cost`, `load_weight`, `unload_weight`, `decrease`, `decrease_claim`, `basis`) VALUES
+(1, '2019-09-14 05:05:34', '2019-09-14 05:05:34', NULL, '123456789', 'po987654321', '2019-09-13 00:00:00', '2019-09-14 00:00:00', 200000, 1000, 750, 250, 750000, '500000');
 
 -- --------------------------------------------------------
 
@@ -550,7 +585,12 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (759, 'read_oprs', 'oprs', '2019-09-09 18:34:33', '2019-09-09 18:34:33'),
 (760, 'edit_oprs', 'oprs', '2019-09-09 18:34:33', '2019-09-09 18:34:33'),
 (761, 'add_oprs', 'oprs', '2019-09-09 18:34:33', '2019-09-09 18:34:33'),
-(762, 'delete_oprs', 'oprs', '2019-09-09 18:34:33', '2019-09-09 18:34:33');
+(762, 'delete_oprs', 'oprs', '2019-09-09 18:34:33', '2019-09-09 18:34:33'),
+(768, 'browse_wares', 'wares', '2019-10-03 05:42:32', '2019-10-03 05:42:32'),
+(769, 'read_wares', 'wares', '2019-10-03 05:42:32', '2019-10-03 05:42:32'),
+(770, 'edit_wares', 'wares', '2019-10-03 05:42:32', '2019-10-03 05:42:32'),
+(771, 'add_wares', 'wares', '2019-10-03 05:42:32', '2019-10-03 05:42:32'),
+(772, 'delete_wares', 'wares', '2019-10-03 05:42:32', '2019-10-03 05:42:32');
 
 -- --------------------------------------------------------
 
@@ -730,7 +770,17 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (761, 12),
 (761, 22),
 (762, 12),
-(762, 22);
+(762, 22),
+(768, 12),
+(768, 22),
+(769, 12),
+(769, 22),
+(770, 12),
+(770, 22),
+(771, 12),
+(771, 22),
+(772, 12),
+(772, 22);
 
 -- --------------------------------------------------------
 
@@ -817,7 +867,7 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (32, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', NULL, '', 'text', 4, 'Site'),
 (42, 'admin.bg_image', 'Admin Background Image', 'settings\\September2019\\cqTizKSJjFIJ9sykm2dB.jpg', '', 'image', 5, 'Admin'),
 (52, 'admin.title', 'Admin Title', 'OprSawit', '', 'text', 1, 'Admin'),
-(62, 'admin.description', 'Admin Description', 'Selamat Datang', '', 'text', 2, 'Admin'),
+(62, 'admin.description', 'Admin Description', NULL, '', 'text', 2, 'Admin'),
 (72, 'admin.loader', 'Admin Loader', 'settings\\September2019\\kra6oTomLvJT9efLeFe7.png', '', 'image', 3, 'Admin'),
 (82, 'admin.icon_image', 'Admin Icon Image', 'settings\\September2019\\mID5inxHNKINCv4CK6oC.png', '', 'image', 4, 'Admin'),
 (92, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin');
@@ -838,6 +888,13 @@ CREATE TABLE `spares` (
   `itemused` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `spares`
+--
+
+INSERT INTO `spares` (`id`, `created_at`, `updated_at`, `deleted_at`, `itemname`, `itemstock`, `itemused`) VALUES
+(1, '2019-10-03 08:06:45', '2019-10-03 08:06:45', NULL, 'Minyak Rem', 20, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -853,6 +910,13 @@ CREATE TABLE `tires` (
   `tireserial` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tirestatus` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `tires`
+--
+
+INSERT INTO `tires` (`id`, `created_at`, `updated_at`, `deleted_at`, `tirename`, `tireserial`, `tirestatus`) VALUES
+(1, '2019-10-03 08:07:27', '2019-10-03 08:07:27', NULL, 'Michellin', '234AD321', 'option1');
 
 -- --------------------------------------------------------
 
@@ -905,7 +969,23 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (262, 'menu_items', 'title', 42, 'pt', 'Ferramentas', '2019-09-02 19:30:14', '2019-09-02 19:30:14'),
 (272, 'menu_items', 'title', 52, 'pt', 'Menus', '2019-09-02 19:30:14', '2019-09-02 19:30:14'),
 (282, 'menu_items', 'title', 62, 'pt', 'Base de dados', '2019-09-02 19:30:14', '2019-09-02 19:30:14'),
-(292, 'menu_items', 'title', 92, 'pt', 'Configurações', '2019-09-02 19:30:14', '2019-09-02 19:30:14');
+(292, 'menu_items', 'title', 92, 'pt', 'Configurações', '2019-09-02 19:30:14', '2019-09-02 19:30:14'),
+(293, 'data_types', 'display_name_singular', 112, 'en', 'Supir', '2019-09-30 04:03:27', '2019-09-30 04:03:27'),
+(294, 'data_types', 'display_name_plural', 112, 'en', 'Supir', '2019-09-30 04:03:27', '2019-09-30 04:03:27'),
+(295, 'data_types', 'display_name_singular', 133, 'en', 'Surat Jalan', '2019-10-01 04:59:00', '2019-10-01 04:59:00'),
+(296, 'data_types', 'display_name_plural', 133, 'en', 'Surat Jalan', '2019-10-01 04:59:00', '2019-10-01 04:59:00'),
+(297, 'data_types', 'display_name_singular', 102, 'en', 'Car', '2019-10-01 05:03:21', '2019-10-01 05:03:21'),
+(298, 'data_types', 'display_name_plural', 102, 'en', 'Cars', '2019-10-01 05:03:21', '2019-10-01 05:03:21'),
+(299, 'data_types', 'display_name_singular', 122, 'en', 'Suku Cadang', '2019-10-01 05:09:45', '2019-10-01 05:09:45'),
+(300, 'data_types', 'display_name_plural', 122, 'en', 'Suku Cadang', '2019-10-01 05:09:45', '2019-10-01 05:09:45'),
+(301, 'data_types', 'display_name_singular', 132, 'en', 'Ban', '2019-10-01 05:12:03', '2019-10-01 05:12:03'),
+(302, 'data_types', 'display_name_plural', 132, 'en', 'Ban', '2019-10-01 05:12:03', '2019-10-01 05:12:03'),
+(303, 'menu_items', 'title', 316, 'en', 'Data', '2019-10-03 05:16:50', '2019-10-03 05:16:50'),
+(304, 'menu_items', 'title', 152, 'en', 'Operasional', '2019-10-03 05:19:22', '2019-10-03 05:19:22'),
+(305, 'data_types', 'display_name_singular', 134, 'en', 'PKS', '2019-10-03 05:38:34', '2019-10-03 05:38:34'),
+(306, 'data_types', 'display_name_plural', 134, 'en', 'PKS', '2019-10-03 05:38:34', '2019-10-03 05:38:34'),
+(307, 'data_types', 'display_name_singular', 135, 'en', 'PKS', '2019-10-03 08:10:13', '2019-10-03 08:10:13'),
+(308, 'data_types', 'display_name_plural', 135, 'en', 'PKS', '2019-10-03 08:10:13', '2019-10-03 08:10:13');
 
 -- --------------------------------------------------------
 
@@ -933,7 +1013,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
 (2, 2, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$wYqvVYD2Evl1mAjbGdSZd.FL5FIEvaRmrOfRw3aVTukNsDs3ylGoS', 'XSRP0JrxUy7JSDzJukihSRsYuHpS3a9RgTNURc0yp1vppiRp3R8NVQXBhZho', '{\"locale\":\"id\"}', '2019-09-02 19:30:12', '2019-09-05 02:54:24'),
-(12, 22, 'Iwan', 'iwan.bazz@gmail.com', 'users/September2019/nGgIOV7klrsUALHRw15I.png', NULL, '$2y$10$DoEm0H7oamX5mTaYTbckFuIaV317afEXYLAhW1WTZYVINdMs8Z8WS', NULL, '{\"locale\":\"id\"}', '2019-09-02 23:08:55', '2019-09-03 04:34:45'),
+(12, 22, 'Iwan', 'iwan.bazz@gmail.com', 'users/September2019/nGgIOV7klrsUALHRw15I.png', NULL, '$2y$10$DoEm0H7oamX5mTaYTbckFuIaV317afEXYLAhW1WTZYVINdMs8Z8WS', 'CVnPso9QR7YEVQ929RAz9g99tN6Rulm7XD9TbGfSdp70ZTkdXO56834myfsk', '{\"locale\":\"id\"}', '2019-09-02 23:08:55', '2019-09-03 04:34:45'),
 (22, 12, 'User', 'user@user.com', 'users/September2019/72B5nXr4eDpu5Zt4ytqG.png', NULL, '$2y$10$YJFPE/qX8I8udQLMON5PfOBYP9h5ybZLRoVHzr7X9GwIo/4v/dPhO', NULL, '{\"locale\":\"id\"}', '2019-09-04 02:11:58', '2019-09-05 02:07:04');
 
 -- --------------------------------------------------------
@@ -965,33 +1045,25 @@ CREATE TABLE `voyager_redirects` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `voyager_themes`
+-- Table structure for table `wares`
 --
 
-CREATE TABLE `voyager_themes` (
+CREATE TABLE `wares` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `folder` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
-  `active` tinyint(1) NOT NULL DEFAULT '0',
-  `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `ware_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ware_location` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ware_mile` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `voyager_theme_options`
+-- Dumping data for table `wares`
 --
 
-CREATE TABLE `voyager_theme_options` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `voyager_theme_id` int(10) UNSIGNED NOT NULL,
-  `key` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `value` text COLLATE utf8_unicode_ci,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `wares` (`id`, `created_at`, `updated_at`, `deleted_at`, `ware_name`, `ware_location`, `ware_mile`) VALUES
+(1, '2019-10-03 08:37:43', '2019-10-03 08:37:43', NULL, 'PT. Sawit Pratama', 'Rengat', 100);
 
 --
 -- Indexes for dumped tables
@@ -1150,18 +1222,10 @@ ALTER TABLE `voyager_redirects`
   ADD UNIQUE KEY `voyager_redirects_from_unique` (`from`);
 
 --
--- Indexes for table `voyager_themes`
+-- Indexes for table `wares`
 --
-ALTER TABLE `voyager_themes`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `voyager_themes_folder_unique` (`folder`);
-
---
--- Indexes for table `voyager_theme_options`
---
-ALTER TABLE `voyager_theme_options`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `voyager_theme_options_voyager_theme_id_index` (`voyager_theme_id`);
+ALTER TABLE `wares`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1183,19 +1247,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=917;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=933;
 
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT for table `drivers`
 --
 ALTER TABLE `drivers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -1207,19 +1271,19 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=316;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=319;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=288;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=294;
 
 --
 -- AUTO_INCREMENT for table `oprs`
 --
 ALTER TABLE `oprs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pages`
@@ -1231,7 +1295,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=763;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=773;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -1255,19 +1319,19 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `spares`
 --
 ALTER TABLE `spares`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tires`
 --
 ALTER TABLE `tires`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=293;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=309;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -1282,16 +1346,10 @@ ALTER TABLE `voyager_redirects`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `voyager_themes`
+-- AUTO_INCREMENT for table `wares`
 --
-ALTER TABLE `voyager_themes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `voyager_theme_options`
---
-ALTER TABLE `voyager_theme_options`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `wares`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -1334,12 +1392,6 @@ ALTER TABLE `users`
 ALTER TABLE `user_roles`
   ADD CONSTRAINT `user_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `user_roles_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `voyager_theme_options`
---
-ALTER TABLE `voyager_theme_options`
-  ADD CONSTRAINT `voyager_theme_options_voyager_theme_id_foreign` FOREIGN KEY (`voyager_theme_id`) REFERENCES `voyager_themes` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
