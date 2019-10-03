@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57959c9a6f62d32c4023552f3591779b",
+    "content-hash": "3f04cfa9d80431bf6202640c06049ee9",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -1959,44 +1959,6 @@
                 "versions"
             ],
             "time": "2018-06-13T13:22:40+00:00"
-        },
-        {
-            "name": "json-mini-bread",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/strappberry/json-mini-bread.git",
-                "reference": "master"
-            },
-            "require": {
-                "larapack/hooks": "^1.0.5",
-                "tcg/voyager": "^1.1.11"
-            },
-            "type": "library",
-            "extra": {
-                "hook": {
-                    "providers": [
-                        "JsonMiniBreadHook\\JsonMiniBreadHookServiceProvider"
-                    ],
-                    "aliases": {
-                        "JsonMiniBreadHook": "JsonMiniBreadHook\\Facades\\JsonMiniBreadHookFacade"
-                    },
-                    "views": [
-                        "resources/views"
-                    ],
-                    "lang": [
-                        "resources/lang"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "JsonMiniBreadHook\\": "src/"
-                }
-            },
-            "notification-url": "https://larapack.io/downloads",
-            "description": "Creates a mini BREAD nested inside another model.",
-            "time": "2019-08-23T22:40:15+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -7924,7 +7886,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "generate-migrations-hook": 10,
-        "json-mini-bread": 20,
         "key-value-json": 10,
         "marfdiogo78/extended-bread-form-fields": 20
     },

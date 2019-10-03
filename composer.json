@@ -16,7 +16,6 @@
         "facade/ignition": "^1.6",
         "fideloper/proxy": "^4.0",
         "generate-migrations-hook": "^0.1.3@beta",
-        "json-mini-bread": "dev-master",
         "key-value-json": "^0.1.0@beta",
         "larapack/hooks": "^1.0",
         "larapack/voyager-hooks": "^1.2",
