@@ -1,7 +1,7 @@
 <?php
 
 return [
-    /*
+  /*
     |--------------------------------------------------------------------------
     | User config
     |--------------------------------------------------------------------------
@@ -10,15 +10,15 @@ return [
     |
     */
 
-    'user' => [
-        'add_default_role_on_register' => true,
-        'default_role'                 => 'user',
-        'namespace'                    => null,
-        'default_avatar'               => '/assets/avatar.png',
-        'redirect'                     => '/',
-    ],
+  'user' => [
+    'add_default_role_on_register' => true,
+    'default_role'                 => 'user',
+    'namespace'                    => null,
+    'default_avatar'               => '/assets/avatar.png',
+    'redirect'                     => '/',
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Controllers config
     |--------------------------------------------------------------------------
@@ -27,12 +27,12 @@ return [
     |
     */
 
-    'controllers' => [
-        //'namespace' => 'TCG\\Voyager\\Http\\Controllers',
-        'namespace' => 'App\\Http\\Controllers\\Voyager',
-    ],
+  'controllers' => [
+    //'namespace' => 'TCG\\Voyager\\Http\\Controllers',
+    'namespace' => 'App\\Http\\Controllers\\Voyager',
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Models config
     |--------------------------------------------------------------------------
@@ -43,11 +43,11 @@ return [
     |
     */
 
-    'models' => [
-        //'namespace' => 'App\\',
-    ],
+  'models' => [
+    //'namespace' => 'App\\',
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Storage Config
     |--------------------------------------------------------------------------
@@ -56,11 +56,11 @@ return [
     |
     */
 
-    'storage' => [
-        'disk' => env('FILESYSTEM_DRIVER', 's3'),
-    ],
+  'storage' => [
+    'disk' => env('FILESYSTEM_DRIVER', 's3'),
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Media Manager
     |--------------------------------------------------------------------------
@@ -69,9 +69,9 @@ return [
     |
     */
 
-    'hidden_files' => false,
+  'hidden_files' => false,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Database Config
     |--------------------------------------------------------------------------
@@ -80,14 +80,14 @@ return [
     |
     */
 
-    'database' => [
-        'tables' => [
-            'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'settings'],
-        ],
-        'autoload_migrations' => true,
+  'database' => [
+    'tables' => [
+      'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'settings'],
     ],
+    'autoload_migrations' => true,
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Multilingual configuration
     |--------------------------------------------------------------------------
@@ -97,27 +97,27 @@ return [
     |
     */
 
-    'multilingual' => [
-        /*
+  'multilingual' => [
+    /*
          * Set whether or not the multilingual is supported by the BREAD input.
          */
-        'enabled' => true,
-
-        /*
-         * Select default language
-         */
-        'default' => 'id',
-
-        /*
-         * Select languages that are supported.
-         */
-        'locales' => [
-            'en',
-            'id',
-        ],
-    ],
+    'enabled' => true,
 
     /*
+         * Select default language
+         */
+    'default' => 'id',
+
+    /*
+         * Select languages that are supported.
+         */
+    'locales' => [
+      'en',
+      'id',
+    ],
+  ],
+
+  /*
     |--------------------------------------------------------------------------
     | Dashboard config
     |--------------------------------------------------------------------------
@@ -126,36 +126,40 @@ return [
     |
     */
 
-    'dashboard' => [
-        // Add custom list items to navbar's dropdown
-        'navbar_items' => [
-            'voyager::generic.profile' => [
-                'route'      => 'voyager.profile',
-                'classes'    => 'class-full-of-rum',
-                'icon_class' => 'voyager-person',
-            ],
-            'voyager::generic.home' => [
-                'route'        => '/',
-                'icon_class'   => 'voyager-home',
-                'target_blank' => true,
-            ],
-            'voyager::generic.logout' => [
-                'route'      => 'voyager.logout',
-                'icon_class' => 'voyager-power',
-            ],
-        ],
-
-        'widgets' => [
-            'TCG\\Voyager\\Widgets\\UserDimmer',
-            // 'TCG\\Voyager\\Widgets\\PostDimmer',
-            // 'TCG\\Voyager\\Widgets\\PageDimmer',
-            'App\\Widgets\\Cars',
-            'App\\Widgets\\Drivers'
-        ],
-
+  'dashboard' => [
+    // Add custom list items to navbar's dropdown
+    'navbar_items' => [
+      'voyager::generic.profile' => [
+        'route'      => 'voyager.profile',
+        'classes'    => 'class-full-of-rum',
+        'icon_class' => 'voyager-person',
+      ],
+      'voyager::generic.home' => [
+        'route'        => '/',
+        'icon_class'   => 'voyager-home',
+        'target_blank' => true,
+      ],
+      'voyager::generic.logout' => [
+        'route'      => 'voyager.logout',
+        'icon_class' => 'voyager-power',
+      ],
     ],
 
-    /*
+    'data_tables' => [
+      'responsive' => true
+    ],
+
+    'widgets' => [
+      'TCG\\Voyager\\Widgets\\UserDimmer',
+      // 'TCG\\Voyager\\Widgets\\PostDimmer',
+      // 'TCG\\Voyager\\Widgets\\PageDimmer',
+      'App\\Widgets\\Cars',
+      'App\\Widgets\\Drivers'
+    ],
+
+  ],
+
+  /*
     |--------------------------------------------------------------------------
     | Automatic Procedures
     |--------------------------------------------------------------------------
@@ -164,21 +168,21 @@ return [
     |
     */
 
-    'bread' => [
-        // When a BREAD is added, create the Menu item using the BREAD properties.
-        'add_menu_item' => true,
+  'bread' => [
+    // When a BREAD is added, create the Menu item using the BREAD properties.
+    'add_menu_item' => true,
 
-        // which menu add item to
-        'default_menu' => 'admin',
+    // which menu add item to
+    'default_menu' => 'admin',
 
-        // When a BREAD is added, create the related Permission.
-        'add_permission' => true,
+    // When a BREAD is added, create the related Permission.
+    'add_permission' => true,
 
-        // which role add premissions to
-        'default_role' => 'superadmin',
-    ],
+    // which role add premissions to
+    'default_role' => 'superadmin',
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | UI Generic Config
     |--------------------------------------------------------------------------
@@ -187,35 +191,35 @@ return [
     |
     */
 
-    'primary_color' => '#239650', // default: #22A7F0
+  'primary_color' => '#239650', // default: #22A7F0
 
-    'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
+  'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 
-    // Here you can specify additional assets you would like to be included in the master.blade
-    'additional_css' => [
-        //'css/custom.css',
+  // Here you can specify additional assets you would like to be included in the master.blade
+  'additional_css' => [
+    //'css/custom.css',
+  ],
+
+  'additional_js' => [
+    //'js/custom.js',
+  ],
+
+  'googlemaps' => [
+    'key'    => env('GOOGLE_MAPS_KEY', ''),
+    'center' => [
+      'lat' => env('GOOGLE_MAPS_DEFAULT_CENTER_LAT', '32.715738'),
+      'lng' => env('GOOGLE_MAPS_DEFAULT_CENTER_LNG', '-117.161084'),
     ],
+    'zoom' => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
+  ],
 
-    'additional_js' => [
-        //'js/custom.js',
-    ],
+  // Activate compass when environment is NOT local
+  'compass_in_production' => false,
 
-    'googlemaps' => [
-        'key'    => env('GOOGLE_MAPS_KEY', ''),
-        'center' => [
-            'lat' => env('GOOGLE_MAPS_DEFAULT_CENTER_LAT', '32.715738'),
-            'lng' => env('GOOGLE_MAPS_DEFAULT_CENTER_LNG', '-117.161084'),
-        ],
-        'zoom' => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
-    ],
-
-    // Activate compass when environment is NOT local
-    'compass_in_production' => false,
-
-    'media' => [
-        // The allowed mimetypes to be uploaded through the media-manager.
-        'allowed_mimetypes' => '*', //All types can be uploaded
-        /*
+  'media' => [
+    // The allowed mimetypes to be uploaded through the media-manager.
+    'allowed_mimetypes' => '*', //All types can be uploaded
+    /*
         'allowed_mimetypes' => [
           'image/jpeg',
           'image/png',
@@ -224,15 +228,15 @@ return [
           'video/mp4',
         ],
         */
-        //Path for media-manager. Relative to the filesystem.
-        'path'                => '/',
-        'show_folders'        => true,
-        'allow_upload'        => true,
-        'allow_move'          => true,
-        'allow_delete'        => true,
-        'allow_create_folder' => true,
-        'allow_rename'        => true,
-        /*'watermark'           => [
+    //Path for media-manager. Relative to the filesystem.
+    'path'                => '/',
+    'show_folders'        => true,
+    'allow_upload'        => true,
+    'allow_move'          => true,
+    'allow_delete'        => true,
+    'allow_create_folder' => true,
+    'allow_rename'        => true,
+    /*'watermark'           => [
             'source'         => 'watermark.png',
             'position'       => 'bottom-left',
             'x'              => 0,
@@ -247,5 +251,5 @@ return [
                 'height'=> 500
            ],
        ]*/
-    ],
+  ],
 ];
