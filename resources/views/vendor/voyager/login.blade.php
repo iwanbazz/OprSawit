@@ -55,7 +55,7 @@
                         @endif
                         <div class="copy animated fadeIn">
                             <h1>{{ Voyager::setting('admin.title', 'Voyager') }}</h1>
-                            <p>{{ Voyager::setting('admin.description', __('voyager::login.welcome')) }}</p>
+                            <p>Selamat Datang</p>
                         </div>
                     </div>
                 </div>
